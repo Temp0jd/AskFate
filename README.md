@@ -77,7 +77,7 @@
 
 Daily auspicious/inauspicious • Lunar calendar
 28 Lunar Mansions • Peng Zu Taboos
-Lucky gods & evil spirits • Hourly fortune
+Lucky gods &amp; evil spirits • Hourly fortune
 
 </td>
 <td width="33%" align="center">
@@ -87,7 +87,7 @@ Lucky gods & evil spirits • Hourly fortune
 
 12 Zodiac signs • Daily/weekly/monthly
 Compatibility • Fortune analysis
-Rising sign • Venus & Mars
+Rising sign • Venus &amp; Mars
 
 </td>
 <td width="33%" align="center">
@@ -117,7 +117,7 @@ Destiny judgment • Prediction
 ### 🌀 Qimen Dunjia (奇门遁甲)
 <img src="https://img.shields.io/badge/Imperial%20Art-3498DB?style=flat-square"/>
 
-Nine palace grid • Eight gates & nine stars
+Nine palace grid • Eight gates &amp; nine stars
 Three wonders • Decision support
 Hourly fortune • Strategic guidance
 
@@ -301,7 +301,7 @@ ENABLE_HUANGLI=true      # 📅 Huangli
 
 | Endpoint | Method | Description |
 |:-----|:----:|:-----|
-| `/api/bazi` | POST | Bazi calculation & interpretation |
+| `/api/bazi` | POST | Bazi calculation &amp; interpretation |
 | `/api/huangli` | POST | Traditional calendar query |
 | `/api/horoscope` | POST | Horoscope fortune |
 | `/api/tarot` | POST | Tarot divination |
