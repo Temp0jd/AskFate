@@ -42,3 +42,4 @@ next-env.d.ts
 
 # private directory with sensitive files
 private/
+.claude/
