@@ -217,30 +217,7 @@ npm run dev
 
 ---
 
-## 🚀 部署方式
-
-### Docker 部署（推荐）
-
-需要先克隆仓库并配置环境变量：
-
-```bash
-# 1️⃣ 克隆仓库
-git clone https://github.com/Temp0jd/AskFate.git
-cd AskFate
-
-# 2️⃣ 配置环境变量
-cp .env.example .env.local
-# 编辑 .env.local 填入你的 API Key
-
-# 3️⃣ 使用 Docker Compose 启动
-docker-compose up -d
-
-# 或手动构建运行
-docker build -t askfate .
-docker run -p 3000:3000 --env-file .env.local askfate
-```
-
-### 生产环境部署
+## 🚀 生产部署
 
 ```bash
 # 构建生产版本
@@ -248,6 +225,14 @@ npm run build
 
 # 启动生产服务
 npm start
+```
+
+或使用 PM2 等进程管理器：
+
+```bash
+npm install -g pm2
+npm run build
+pm2 start npm --name "askfate" -- start
 ```
 
 ---
