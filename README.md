@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=🔮%20F-Teller&fontSize=80&animation=fadeIn&fontAlignY=35&desc=AI智能命理占卜平台&descAlignY=55&descSize=20"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=🔮%20AskFate%20问命&fontSize=70&animation=fadeIn&fontAlignY=35&desc=AI智能命理占卜平台&descAlignY=55&descSize=20"/>
 
 <br>
 
@@ -28,7 +28,7 @@
 
 <p align="center">
   <b>🌟 融合千年东方命理智慧与现代 AI 技术 🌟</b><br>
-  <i>探索命运的奥秘，从 F-Teller 开始</i>
+  <i>探索命运的奥秘，从 问命/AskFate 开始</i>
 </p>
 
 <br>
@@ -195,14 +195,27 @@ GLM-4 • Anthropic
 ✓ Node.js 20+     ✓ npm / pnpm / yarn     ✓ AI API Key
 ```
 
-### 📦 安装步骤
+### 📦 安装方式
 
-<div align="center">
+#### 方式一：全局安装（推荐）
+
+```bash
+# 1️⃣ 全局安装
+npm install -g fortuning-ai
+
+# 2️⃣ 配置 API Key
+fortuning-ai config
+
+# 3️⃣ 启动服务
+fortuning-ai start
+```
+
+#### 方式二：源码安装
 
 ```bash
 # 1️⃣ 克隆仓库
-git clone https://github.com/Temp0jd/Fortune-Teller.git
-cd Fortune-Teller
+git clone https://github.com/Temp0jd/AskFate.git
+cd AskFate
 
 # 2️⃣ 安装依赖
 npm install
@@ -215,9 +228,20 @@ cp .env.example .env.local
 npm run dev
 ```
 
-</div>
-
 然后访问 👉 **http://localhost:3000**
+
+---
+
+## 🖥️ CLI 命令
+
+全局安装后可以使用以下命令：
+
+| 命令 | 说明 |
+|:-----|:-----|
+| `fortuning-ai config` | 交互式配置 API Key |
+| `fortuning-ai start` | 启动生产服务 |
+| `fortuning-ai dev` | 启动开发模式（热重载） |
+| `fortuning-ai status` | 查看配置状态 |
 
 ---
 
@@ -362,7 +386,7 @@ curl -X POST http://localhost:3000/api/bazi \
 ## 📁 项目结构
 
 ```
-Fortune-Teller/
+AskFate/
 ├── 📱 app/                    # Next.js App Router
 │   ├── 📂 (features)/         # 功能页面
 │   │   ├── bazi/              # ☯️ 八字
@@ -439,11 +463,23 @@ npm start
 
 ---
 
+## 📝 更新日志
+
+### v1.0.0 (2026-02-24)
+
+- ✨ **品牌重塑**: F-Teller → 问命/AskFate
+- 🌙 **夜间模式优化**: 修复黄历、首页等页面的暗黑模式支持
+- 🔄 **追问模块统一**: 六爻页面使用与其他页面一致的追问组件
+- 🖥️ **CLI 工具**: 新增命令行工具支持全局安装
+- 📦 **NPM 发布**: 支持 `npm install -g fortuning-ai` 一键安装
+
+---
+
 ## 📄 许可证
 
 <div align="center">
 
-[MIT License](./LICENSE) © 2026 **F-Teller**
+[MIT License](./LICENSE) © 2026 **问命/AskFate**
 
 <br>
 
@@ -451,7 +487,7 @@ npm start
 
 <br>
 
-<a href="https://github.com/Temp0jd/Fortune-Teller">
+<a href="https://github.com/Temp0jd/AskFate">
   <img src="https://img.shields.io/badge/⭐%20Star%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 

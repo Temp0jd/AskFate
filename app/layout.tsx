@@ -5,12 +5,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "F-Teller - AI智能命理占卜",
+  title: "问命/AskFate - AI智能命理占卜",
   description: "融合古老命理智慧与现代AI技术，提供星座、塔罗、八字、奇门、六爻、合盘等全方位预测解读",
-  keywords: ["AI占卜", "F-Teller", "星座", "塔罗", "八字", "奇门遁甲", "六爻", "合盘"],
-  authors: [{ name: "F-Teller" }],
+  keywords: ["AI占卜", "问命", "AskFate", "星座", "塔罗", "八字", "奇门遁甲", "六爻", "合盘"],
+  authors: [{ name: "问命/AskFate" }],
   openGraph: {
-    title: "F-Teller - AI智能命理占卜",
+    title: "问命/AskFate - AI智能命理占卜",
     description: "融合古老命理智慧与现代AI技术，提供星座、塔罗、八字、奇门、六爻、合盘等全方位预测解读",
     type: "website",
   },

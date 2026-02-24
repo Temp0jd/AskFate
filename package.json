@@ -1,13 +1,58 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fortuning-ai",
+  "version": "1.0.0",
+  "description": "AI智能命理占卜平台 - 八字、塔罗、星座、奇门遁甲等",
+  "main": "dist/index.js",
+  "bin": {
+    "fortuning-ai": "./bin/cli.js",
+    "fteller": "./bin/cli.js"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node scripts/postinstall.js"
   },
+  "keywords": [
+    "fortune-telling",
+    "bazi",
+    "tarot",
+    "horoscope",
+    "qimen",
+    "liuyao",
+    "astrology",
+    "divination",
+    "ai",
+    "nextjs"
+  ],
+  "author": "Temp0jd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Temp0jd/AskFate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Temp0jd/AskFate/issues"
+  },
+  "homepage": "https://github.com/Temp0jd/AskFate#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "app/",
+    "components/",
+    "lib/",
+    "public/",
+    "scripts/",
+    "next.config.ts",
+    "package.json",
+    "tsconfig.json",
+    "postcss.config.mjs",
+    "components.json",
+    "README.md"
+  ],
   "dependencies": {
     "ai": "^6.0.79",
     "class-variance-authority": "^0.7.1",
@@ -23,7 +68,12 @@
     "react-day-picker": "^9.13.2",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0",
-    "zustand": "^5.0.11"
+    "zustand": "^5.0.11",
+    "commander": "^12.0.0",
+    "inquirer": "^10.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0",
+    "boxen": "^8.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

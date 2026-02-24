@@ -55,7 +55,7 @@ export function FollowUpQuestion({
   if (!showInput && !hasHistory) {
     return (
       <div className="space-y-3">
-        <div className="flex items-center gap-2 text-sm text-slate-500">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <MessageCircle className="w-4 h-4" />
           <span>还有疑问？可以继续追问</span>
         </div>
@@ -67,7 +67,7 @@ export function FollowUpQuestion({
                 setQuestion(q);
                 setShowInput(true);
               }}
-              className="px-3 py-1.5 text-xs bg-white border border-cyan-100 rounded-full text-slate-600 hover:bg-cyan-50 hover:border-cyan-200 transition-colors"
+              className="px-3 py-1.5 text-xs bg-card border border-border rounded-full text-foreground hover:bg-muted hover:border-primary/30 transition-colors"
             >
               {q}
             </button>
@@ -77,7 +77,7 @@ export function FollowUpQuestion({
           variant="outline"
           size="sm"
           onClick={() => setShowInput(true)}
-          className="w-full border-cyan-200 text-cyan-700 hover:bg-cyan-50"
+          className="w-full border-border text-primary hover:bg-primary/10"
         >
           <MessageCircle className="w-4 h-4 mr-2" />
           我要追问
@@ -96,11 +96,11 @@ export function FollowUpQuestion({
               key={msg.id}
               className={`p-3 rounded-lg text-sm ${
                 msg.role === 'user'
-                  ? 'bg-cyan-50 text-slate-700 ml-4'
-                  : 'bg-white border border-cyan-100 text-slate-600 mr-4'
+                  ? 'bg-secondary text-secondary-foreground ml-4'
+                  : 'bg-card border border-border text-foreground mr-4'
               }`}
             >
-              <p className="text-xs text-slate-400 mb-1">
+              <p className="text-xs text-muted-foreground mb-1">
                 {msg.role === 'user' ? '你' : featureName}
               </p>
               <p className="line-clamp-3">{msg.content}</p>
@@ -122,7 +122,7 @@ export function FollowUpQuestion({
           type="submit"
           disabled={!question.trim() || disabled || isLoading}
           size="icon"
-          className="bg-cyan-600 hover:bg-cyan-500"
+          className="bg-primary hover:bg-primary/90"
         >
           <Send className="w-4 h-4" />
         </Button>

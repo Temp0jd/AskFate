@@ -57,29 +57,29 @@ export default function Home() {
       <section className="text-center pt-6 pb-4">
         <FadeInUp>
           {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-cyan-100 mb-6 dark:bg-slate-800 dark:border-slate-700">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-500" />
-            <span className="text-xs font-medium text-slate-600 dark:text-slate-300">AI 驱动 · 智能解读</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-border mb-6">
+            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <span className="text-xs font-medium text-foreground">AI 驱动 · 智能解读</span>
           </div>
         </FadeInUp>
 
         <FadeInUp delay={0.1}>
           {/* Main Title */}
           <h1 className="text-3xl sm:text-4xl font-bold mb-3 tracking-tight">
-            <span className="text-cyan-900 dark:text-cyan-100">F-Teller</span>
+            <span className="text-foreground">问命/AskFate</span>
           </h1>
         </FadeInUp>
 
         <FadeInUp delay={0.2}>
           {/* Subtitle */}
-          <p className="text-base text-slate-500 mb-2 dark:text-slate-400">
+          <p className="text-base text-muted-foreground mb-2">
             融合古老命理智慧与现代 AI 技术
           </p>
         </FadeInUp>
 
         <FadeInUp delay={0.3}>
           {/* Description */}
-          <p className="text-sm text-slate-400 mb-6 dark:text-slate-500">
+          <p className="text-sm text-muted-foreground mb-6">
             全方位预测解读，指引前路
           </p>
         </FadeInUp>
@@ -88,7 +88,7 @@ export default function Home() {
           {/* CTA Button */}
           <Link
             href="#features"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cyan-600 text-white text-sm font-medium rounded-lg hover:bg-cyan-500 transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
           >
             开始探索
             <ChevronRight className="w-4 h-4" />
@@ -100,10 +100,10 @@ export default function Home() {
       <section id="features">
         <FadeInUp>
           <div className="text-center mb-6">
-            <h2 className="text-lg font-semibold text-slate-800 mb-1 dark:text-slate-100">
+            <h2 className="text-lg font-semibold text-foreground mb-1">
               选择预测方式
             </h2>
-            <p className="text-sm text-slate-400 dark:text-slate-500">
+            <p className="text-sm text-muted-foreground">
               六种古老智慧为你指引
             </p>
           </div>
@@ -123,31 +123,31 @@ export default function Home() {
       {/* Features Highlights - Simplified */}
       <section className="py-6">
         <FadeInUp delay={0.5}>
-          <div className="bg-white rounded-xl border border-cyan-100 p-6 dark:bg-slate-800 dark:border-slate-700">
+          <div className="bg-card rounded-xl border border-border p-6">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="space-y-2">
                 <Float>
-                  <div className="w-10 h-10 mx-auto rounded-xl bg-cyan-50 flex items-center justify-center dark:bg-cyan-900/30">
-                    <Sparkles className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-secondary flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-primary" />
                   </div>
                 </Float>
-                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">AI 解读</h3>
+                <h3 className="text-sm font-medium text-foreground">AI 解读</h3>
               </div>
               <div className="space-y-2">
                 <Float>
-                  <div className="w-10 h-10 mx-auto rounded-xl bg-cyan-50 flex items-center justify-center dark:bg-cyan-900/30">
-                    <Star className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-secondary flex items-center justify-center">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
                 </Float>
-                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">多维度</h3>
+                <h3 className="text-sm font-medium text-foreground">多维度</h3>
               </div>
               <div className="space-y-2">
                 <Float>
-                  <div className="w-10 h-10 mx-auto rounded-xl bg-cyan-50 flex items-center justify-center dark:bg-cyan-900/30">
-                    <Heart className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-secondary flex items-center justify-center">
+                    <Heart className="w-5 h-5 text-primary" />
                   </div>
                 </Float>
-                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">私密安全</h3>
+                <h3 className="text-sm font-medium text-foreground">私密安全</h3>
               </div>
             </div>
           </div>
@@ -156,9 +156,9 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center pt-4 pb-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent mb-4" />
-        <p className="text-xs text-slate-400">
-          © 2026 F-Teller · 仅供娱乐参考
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-4" />
+        <p className="text-xs text-muted-foreground">
+          © 2026 问命/AskFate · 仅供娱乐参考
         </p>
       </footer>
     </div>

@@ -79,7 +79,7 @@ export function Navbar() {
               <Sparkles className="w-4 h-4 text-cyan-600" />
             </div>
             <span className="font-semibold text-lg text-cyan-900 tracking-tight dark:text-cyan-100">
-              F-Teller
+              问命/AskFate
             </span>
           </Link>
 

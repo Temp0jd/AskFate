@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   // Powered by header
   poweredByHeader: false,
+
+  // CLI support - dynamic port
+  env: {
+    PORT: process.env.PORT || '3000',
+    HOSTNAME: process.env.HOSTNAME || '0.0.0.0',
+  },
   // TypeScript configuration
   typescript: {
     ignoreBuildErrors: false,

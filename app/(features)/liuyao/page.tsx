@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Clock, Hash, Hand, Send, RotateCcw } from "lucide-react";
+import { Sparkles, Clock, Hash, Hand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AIInterpretation } from "@/components/features/ai-interpretation";
 import { useAIStream } from "@/lib/ai/hooks";
@@ -13,6 +13,7 @@ import { calculateLiuYaoEnhanced } from "@/lib/calculations/liuyao-enhanced";
 import { LiuYaoResult } from "@/lib/calculations/liuyao";
 import { LIUYAO_SYSTEM_PROMPT, generateLiuyaoPrompt, LIUYAO_FOLLOWUP_PROMPT } from "@/lib/prompts/liuyao";
 import { useConversationStore } from "@/lib/conversation/store";
+import { FollowUpQuestion } from "@/components/features/follow-up-question";
 
 type DivinationMethod = "time" | "number" | "manual";
 
@@ -25,7 +26,6 @@ export default function LiuyaoPage() {
   const [liuyaoData, setLiuyaoData] = useState<LiuYaoResult | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
-  const [followUpQuestion, setFollowUpQuestion] = useState("");
 
   const { stream, isLoading, isStreaming, text, error, reset } = useAIStream();
 
@@ -133,36 +133,6 @@ export default function LiuyaoPage() {
     }
   };
 
-  // 追问功能
-  const handleFollowUp = async () => {
-    if (!followUpQuestion.trim()) return;
-
-    const conversation = getCurrentConversation();
-    if (!conversation) return;
-
-    reset();
-
-    // 添加用户追问到对话历史
-    addMessage(conversation.id, "user", followUpQuestion);
-    setFollowUpQuestion("");
-
-    // 获取对话历史
-    const messages = getMessagesForAPI(conversation.id, 10);
-
-    // 构建上下文感知的prompt
-    const contextPrompt = `${LIUYAO_FOLLOWUP_PROMPT}\n\n之前的卦象背景：\n- 本卦：${liuyaoData?.benGua.name}\n- 问题：${question || "未明确提问"}\n\n用户追问：${followUpQuestion}`;
-
-    await stream(contextPrompt, {
-      systemPrompt: LIUYAO_SYSTEM_PROMPT,
-      endpoint: "/api/liuyao",
-    });
-
-    // 添加AI回复
-    if (text) {
-      addMessage(conversation.id, "assistant", text);
-    }
-  };
-
   const toggleLine = (index: number) => {
     setManualLines((prev) => prev.map((v, i) => (i === index ? !v : v)));
   };
@@ -171,7 +141,6 @@ export default function LiuyaoPage() {
     setShowResult(false);
     setLiuyaoData(null);
     reset();
-    setFollowUpQuestion("");
   };
 
   return (
@@ -323,43 +292,38 @@ export default function LiuyaoPage() {
       )}
 
       {/* 追问功能 */}
-      {text && !isLoading && (
-        <div className="space-y-3">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="h-px flex-1 bg-border" />
-            <span>继续追问</span>
-            <div className="h-px flex-1 bg-border" />
-          </div>
+      {showResult && (
+        <FollowUpQuestion
+          feature="liuyao"
+          featureName="老张"
+          context={{
+            guaName: liuyaoData?.benGua.name,
+            question,
+          }}
+          onAsk={async (question, history) => {
+            const conversation = getCurrentConversation();
+            if (!conversation) return;
 
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={followUpQuestion}
-              onChange={(e) => setFollowUpQuestion(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleFollowUp()}
-              placeholder="还有疑问？继续向大师请教..."
-              className="flex-1 px-4 py-2 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
-            />
-            <Button
-              onClick={handleFollowUp}
-              disabled={!followUpQuestion.trim() || isStreaming}
-              size="icon"
-            >
-              <Send className="w-4 h-4" />
-            </Button>
-          </div>
+            reset();
 
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              onClick={handleReset}
-              className="flex-1"
-            >
-              <RotateCcw className="w-4 h-4 mr-2" />
-              重新起卦
-            </Button>
-          </div>
-        </div>
+            addMessage(conversation.id, "user", question);
+
+            const messages = getMessagesForAPI(conversation.id, 10);
+
+            const contextPrompt = `${LIUYAO_FOLLOWUP_PROMPT}\n\n之前的卦象背景：\n- 本卦：${liuyaoData?.benGua.name}\n- 问题：${question || "未明确提问"}\n\n用户追问：${question}`;
+
+            await stream(contextPrompt, {
+              systemPrompt: LIUYAO_SYSTEM_PROMPT,
+              endpoint: "/api/liuyao",
+            });
+
+            if (text) {
+              addMessage(conversation.id, "assistant", text);
+            }
+          }}
+          disabled={isCalculating}
+          isLoading={isStreaming}
+        />
       )}
     </div>
   );

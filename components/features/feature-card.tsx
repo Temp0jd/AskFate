@@ -21,32 +21,32 @@ export function FeatureCard({
     <Link href={href} className="group block touch-manipulation">
       <div className="
         relative overflow-hidden
-        bg-white rounded-xl border border-cyan-100
+        bg-card rounded-xl border border-border
         p-4 h-full
         cursor-pointer
         transition-all duration-200
-        hover:border-cyan-200 hover:shadow-md
+        hover:border-primary/30 hover:shadow-md
         hover:-translate-y-0.5
       ">
         <div className="flex items-center gap-3">
           {/* Icon */}
           <div className="
             flex-shrink-0 w-10 h-10 rounded-lg
-            bg-cyan-50 flex items-center justify-center
-            group-hover:bg-cyan-100 transition-colors
+            bg-secondary flex items-center justify-center
+            group-hover:bg-primary/10 transition-colors
           ">
-            <Icon className="w-5 h-5 text-cyan-600" />
+            <Icon className="w-5 h-5 text-primary" />
           </div>
 
           {/* Content */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-slate-800 text-sm group-hover:text-cyan-700 transition-colors">
+              <h3 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">
                 {title}
               </h3>
-              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-cyan-500 transition-colors" />
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
             </div>
-            <p className="text-slate-400 text-xs mt-0.5 truncate">
+            <p className="text-muted-foreground text-xs mt-0.5 truncate">
               {description}
             </p>
           </div>
