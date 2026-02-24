@@ -195,22 +195,7 @@ GLM-4 • Anthropic
 ✓ Node.js 20+     ✓ npm / pnpm / yarn     ✓ AI API Key
 ```
 
-### 📦 安装方式
-
-#### 方式一：全局安装（推荐）
-
-```bash
-# 1️⃣ 全局安装
-npm install -g fortuning-ai
-
-# 2️⃣ 配置 API Key
-fortuning-ai config
-
-# 3️⃣ 启动服务
-fortuning-ai start
-```
-
-#### 方式二：源码安装
+### 📦 安装步骤
 
 ```bash
 # 1️⃣ 克隆仓库
@@ -224,7 +209,7 @@ npm install
 cp .env.example .env.local
 # 编辑 .env.local 填入你的 API Key
 
-# 4️⃣ 启动服务
+# 4️⃣ 启动开发服务
 npm run dev
 ```
 
@@ -232,16 +217,28 @@ npm run dev
 
 ---
 
-## 🖥️ CLI 命令
+## 🚀 部署方式
 
-全局安装后可以使用以下命令：
+### Docker 部署（推荐）
 
-| 命令 | 说明 |
-|:-----|:-----|
-| `fortuning-ai config` | 交互式配置 API Key |
-| `fortuning-ai start` | 启动生产服务 |
-| `fortuning-ai dev` | 启动开发模式（热重载） |
-| `fortuning-ai status` | 查看配置状态 |
+```bash
+# 使用 Docker Compose
+docker-compose up -d
+
+# 或手动构建
+docker build -t askfate .
+docker run -p 3000:3000 --env-file .env.local askfate
+```
+
+### 生产环境部署
+
+```bash
+# 构建生产版本
+npm run build
+
+# 启动生产服务
+npm start
+```
 
 ---
 
@@ -470,8 +467,7 @@ npm start
 - ✨ **品牌重塑**: F-Teller → 问命/AskFate
 - 🌙 **夜间模式优化**: 修复黄历、首页等页面的暗黑模式支持
 - 🔄 **追问模块统一**: 六爻页面使用与其他页面一致的追问组件
-- 🖥️ **CLI 工具**: 新增命令行工具支持全局安装
-- 📦 **NPM 发布**: 支持 `npm install -g fortuning-ai` 一键安装
+- 📦 **项目结构**: 优化代码组织和组件复用
 
 ---
 
