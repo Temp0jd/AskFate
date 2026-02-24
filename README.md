@@ -221,11 +221,21 @@ npm run dev
 
 ### Docker 部署（推荐）
 
+需要先克隆仓库并配置环境变量：
+
 ```bash
-# 使用 Docker Compose
+# 1️⃣ 克隆仓库
+git clone https://github.com/Temp0jd/AskFate.git
+cd AskFate
+
+# 2️⃣ 配置环境变量
+cp .env.example .env.local
+# 编辑 .env.local 填入你的 API Key
+
+# 3️⃣ 使用 Docker Compose 启动
 docker-compose up -d
 
-# 或手动构建
+# 或手动构建运行
 docker build -t askfate .
 docker run -p 3000:3000 --env-file .env.local askfate
 ```
