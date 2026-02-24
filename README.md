@@ -1,3 +1,5 @@
+<div id="chinese"></div>
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=🔮%20AskFate%20问命&fontSize=70&animation=fadeIn&fontAlignY=35&desc=AI智能命理占卜平台&descAlignY=55&descSize=20"/>
@@ -27,7 +29,7 @@
 </p>
 
 <p align="center">
-  <b>🇨🇳 中文</b> | <a href="#-english">🇺🇸 English</a>
+  <b>🇨🇳 中文</b> | <a href="#english">🇺🇸 English</a>
 </p>
 
 <p align="center">
@@ -520,7 +522,7 @@ npm start
 </p>
 
 <p align="center">
-  <a href="#-中文">🇨🇳 中文</a> | <b>🇺🇸 English</b>
+  <a href="#chinese">🇨🇳 中文</a> | <b>🇺🇸 English</b>
 </p>
 
 <br>
