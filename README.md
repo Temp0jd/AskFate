@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=🔮%20AskFate&fontSize=70&animation=fadeIn&fontAlignY=35&desc=AI%20Divination%20%26%20Fortune%20Telling&descAlignY=55&descSize=20"/>
+![AskFate Header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=🔮%20AskFate&fontSize=70&animation=fadeIn&fontAlignY=35&desc=AI%20Divination%20%26%20Fortune%20Telling&descAlignY=55&descSize=20)
 
 <br>
 
